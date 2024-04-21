@@ -28,24 +28,47 @@ class AuthManager extends Controller
         return view('registration');
     }
 
-    function loginPost(Request $request){
-    $request->validate([
-        'email'=>'required',
-        'password'=>'required'
-    ]);
+    // function loginPost(Request $request){
+    // $request->validate([
+    //     'email'=>'required',
+    //     'password'=>'required'
+    // ]);
 
-    $credentials = $request->only('email','password');
-    if(Auth::attempt($credentials)){
-        return redirect()->intended(route('home'));
-    }
-    return redirect(route('login'))->with("error", "Wrong email or password!");
+    // $credentials = $request->only('email','password');
+    // if(Auth::attempt($credentials)){
+    //     return redirect()->intended(route('home'));
+    // }
+    // return redirect(route('login'))->with("error", "Wrong email or password!");
+    // }
+    function loginPost(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        // Periksa apakah pengguna ada dalam basis data
+        $user = User::where('email', $request->email)->first();
+
+        if(!$user) {
+            return redirect(route('login'))->with("error", "User not found!");
+        }
+
+        // Jika pengguna ada dalam basis data, coba untuk melakukan autentikasi
+        if(Auth::attempt($credentials)){
+            return redirect()->intended(route('home'));
+        }
+
+        // Jika autentikasi gagal, berarti password salah
+        return redirect(route('login'))->with("error", "Wrong password!");
     }
 
     function registrationPost(Request $request){
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required'
+            'password'=>'required|min:8|'
         ]);
 
         $data['name'] = $request->name;
@@ -104,7 +127,7 @@ class AuthManager extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,'.$user->id,
-            'password' => 'nullable|string|min:8|confirmed', // tambahkan validasi sesuai kebutuhan
+            'password' => 'nullable|string|min:8', // tambahkan validasi sesuai kebutuhan
         ]);
 
         $data = [
