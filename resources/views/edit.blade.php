@@ -28,10 +28,6 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6">
                         <div class="mt-5">
-                            {{-- {!! Form::model(auth()->user(), [
-                                'route' => ['edit.post', 0],
-                                'method' =>'PUT',
-                            ]) !!} --}}
                             @if ($errors->any())
                                 <div class="col-12">
                                     @foreach ($errors->all() as $error)
