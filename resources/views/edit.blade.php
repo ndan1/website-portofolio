@@ -68,8 +68,7 @@
 
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="password" name="password" type="password" placeholder="password" data-sb-validations="required" />
-                                {{-- {!! Form::password('password', null, ['class' => 'form-control']) !!} --}}
+                                <input class="form-control" id="password" name="password" type="password" placeholder="password"/>
                                 <label for="password">Password</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A password is required.</div>
                             </div>
