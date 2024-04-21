@@ -27,19 +27,6 @@ class AuthManager extends Controller
         }
         return view('registration');
     }
-
-    // function loginPost(Request $request){
-    // $request->validate([
-    //     'email'=>'required',
-    //     'password'=>'required'
-    // ]);
-
-    // $credentials = $request->only('email','password');
-    // if(Auth::attempt($credentials)){
-    //     return redirect()->intended(route('home'));
-    // }
-    // return redirect(route('login'))->with("error", "Wrong email or password!");
-    // }
     function loginPost(Request $request){
         $request->validate([
             'email' => 'required',
