@@ -110,11 +110,6 @@ class AuthManager extends Controller
         return back();
     }
 
-    // public function edit($id){
-    //     $user =auth()->user();
-    //     return view ('edit', compact('user'));
-    // }
-
     public function edit()
     {
         $user = auth()->user();
