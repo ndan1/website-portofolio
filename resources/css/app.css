@@ -1,0 +1,231 @@
+.nav-border{
+    border-bottom: 5px solid #2DFFF6;
+    background-color: black;
+}
+.nav-horizontal{
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+}
+
+div.container{
+    padding: 1.5vw;
+}
+
+li.nav-item{
+    padding: 1.5vw;
+}
+a.nav-link{
+    color: white;
+    font-weight: bold;
+}
+a.nav-link:hover{
+    color: #2DFFF6;
+}
+
+a.nav-link:focus{
+    color: #2DFFF6;
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(315deg, #2DFFF6 0%, #FF7F27 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  }
+
+  .profile {
+    position: relative;
+    height: 75vw;
+    width: 75vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    max-height: 30rem;
+    max-width: 30rem;
+  }
+
+.profile .profile-img {
+    height: 80vw;
+    max-height: 35rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-radius: 20%;
+    transform: translateX(-50%);
+}
+
+.jumbotron-flex{
+    display: flex;
+}
+
+.jumbotron-height{
+    height: 100vh;
+    background-color: black;
+}
+
+/* Button Animation */
+.button {
+    /* border: 1px solid black; */
+    border-radius: 3px;
+    display: block;
+    background: linear-gradient(to right, #009991 50%, #2DFFF6 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+  }
+
+  .button:hover {
+    background-position: left bottom;
+    cursor: pointer;
+  }
+
+  .button:hover .text{
+    color: white;
+  }
+
+  .text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    color: black;
+    transition: all .6s ease-out;
+    display: block;
+  }
+
+  .text-align-center{
+    text-align: center;
+  }
+
+  .project-img{
+    /* height: 10vw; */
+    max-height: 15rem;
+    min-height: 9rem;
+    /* width: auto; */
+    max-width: 16rem;
+    min-width: 8rem;
+  }
+
+  .activity-list{
+    text-align: left;
+  }
+
+  .comment-box{
+    background-color: whitesmoke;
+    border-radius: 1vw;
+    padding: 1vw;
+  }
+
+  div.flex{
+    margin: 2vh 0;
+  }
+
+  a.relative{
+    text-decoration: none;
+    color: black;
+  }
+
+  span.relative{
+    display: none;
+  }
+
+  .project-card{
+    display: flex;
+  }
+
+@media screen and (max-width:1400px) {
+    .profile {
+        position: relative;
+        height: 75vw;
+        width: 75vw;
+        border-radius: 5vw;
+        margin-top: 5vw;
+        max-height: 40rem;
+        max-width: 40rem;
+      }
+
+    .profile .profile-img {
+        height: 80vw;
+        max-height: 40rem;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        border-radius: 20%;
+        transform: translateX(-50%);
+    }
+    .project-img{
+        /* height: 10vw; */
+        max-height: 15rem;
+        min-height: 9rem;
+        /* width: auto; */
+        max-width: 12rem;
+        min-width: 8rem;
+      }
+}
+
+/*
+@media screen and (max-width:1200px) {
+    .profile-img-position{
+        transform: translateX(8%);
+    }
+} */
+
+@media screen and (max-width:991px) {
+    .nav-horizontal{
+        position: relative;
+        display: block;
+    }
+    /* .profile-img-position{
+        transform: translateX(18%);
+    } */
+    .project-img{
+        /* height: 10vw; */
+        max-height: 20rem;
+        min-height: 9rem;
+        /* width: auto; */
+        max-width: 18rem;
+        min-width: 8rem;
+      }
+}
+
+@media screen and (max-width:769px) {
+    .profile .profile-img {
+        height: 80vw;
+        max-height: 35rem;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        border-radius: 20%;
+        transform: translateX(-50%);
+    }
+    h7.resize-title{
+        font-size: 2vh;
+    }
+    .project-img{
+        /* height: 10vw; */
+        max-height: 20rem;
+        min-height: 9rem;
+        /* width: auto; */
+        max-width: 15rem;
+        min-width: 8rem;
+      }
+}
+
+@media screen and (max-width:425px) {
+    h7.resize-title{
+        font-size: 1.45vh;
+    }
+    .project-img{
+        /* height: 10vw; */
+        max-height: 17rem;
+        min-height: 7rem;
+        /* width: auto; */
+        max-width: 12rem;
+        min-width: 6rem;
+      }
+}
+
